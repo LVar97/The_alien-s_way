@@ -57,11 +57,13 @@ a{text-decoration: none;}
 .game__body:before,
 .game__body:after,
 .game__items:before,
-.game__items:after {
+.game__items:after,
+.game__dop:before,
+.game__dop:after {
     content: '';
     pointer-events: all;
-    width: 33.333vw;
-    height: 33.333vh;
+    width: 20vw;
+    height: 20vh;
     border-radius: 50%;
     position: absolute;
     top: 0;
@@ -70,45 +72,66 @@ a{text-decoration: none;}
     display: inline-block;
 }
 .game__body:before{
-    background-color: #B0C4DE;
+    background: linear-gradient(rgba(135, 60, 255, 0.4), rgba(135, 60, 255, 0.0) 80%),
+    linear-gradient(-45deg, rgba(120, 155, 255, 0.9) 25%, rgba(255, 160, 65, 0.9) 75%);
     animation: fly_1 3s infinite;
 }
 .game__body:after{
-    background-color: #E6E6FA;
+    background:linear-gradient(3deg, #fc354c, #0abfbc);
     animation: fly_2 7s infinite;
 }
 .game__items:before{
-    background-color: #778899;
+    background: linear-gradient(#c6e4ee 0%, #c6e4ee 40%, #fed1ae 60%, #faa0b9 70%, #cb7dcb 80%, #757ecb 100%);
     animation: fly_3 5s infinite;
 
 }
 .game__items:after {
-    background-color: #abc2ca;
+    background: linear-gradient(5deg, #659999, #f4791f );
     animation: fly_4 11s infinite;
-
+}
+.game__dop:before{
+    background: linear-gradient(81deg, #23074d, #cc5333);
+    animation: fly_5 3s infinite;
+}
+.game__dop:after{
+    background: linear-gradient(160deg, #fffbd5, #b20a2c);
+    animation: fly_6 9s infinite;
 }
 @keyframes fly_1{
-    25% {transform: translate(66.667vw, 0vh);}
-    50% {transform: translate(66.667vw, 66.667vh);}
-    75% {transform: translate(0vw, 66.667vh);}
+    25% {transform: translate(79.778vw, 0vh);}
+    50% {transform: translate(79.778vw, 79.778vh);}
+    75% {transform: translate(0vw, 79.778vh);}
     0% {transform: translate(0px, 0px);}
 }
 @keyframes fly_2{
-    25% {transform: translate(0vw, 66.667vh);}
-    50% {transform: translate(66.667vw, 0vh);}
-    75% {transform: translate(66.667vw, 66.667vh);}
+    25% {transform: translate(0vw, 79.778vh);}
+    50% {transform: translate(79.778vw, 0vh);}
+    75% {transform: translate(79.778vw, 79.778vh);}
     0% {transform: translate(0px, 0px);}
 }
 @keyframes fly_3{
-    25% {transform: translate(66.667vw, 0vh);}
-    50% {transform: translate(0vw, 66.667vh);}
-    75% {transform: translate(66.667vw, 66.667vh);}
+    /* 66.667  */
+    25% {transform: translate(79.778vw, 0vh);}
+    50% {transform: translate(0vw, 79.778vh);}
+    75% {transform: translate(79.778vw, 79.778vh);}
+    0% {transform: translate(0px, 0px);}
+}  
+@keyframes fly_4{
+    25% {transform: translate(79.778vw, 0vh);}
+    50% {transform: translate(0vw, 79.778vh);}
+    75% {transform: translate(79.778, 79.778vh);}
     0% {transform: translate(0px, 0px);}
 }
-@keyframes fly_4{
-    25% {transform: translate(66.667vw, 0vh);}
-    50% {transform: translate(0vw, 66.667vh);}
-    75% {transform: translate(66.667vw, 66.667vh);}
+@keyframes fly_5{
+    25% {transform: translate(0vw, 79.778vh);}
+    50% {transform: translate(0vw, 79.778vh);}
+    75% {transform: translate(79.778, 0);}
+    0% {transform: translate(0px, 0px);}
+}
+@keyframes fly_6{
+    25% {transform: translate(79.778vw, 79.778vh);}
+    50% {transform: translate(79.778vw, 0vh);}
+    75% {transform: translate(79.778vw, 0vh);}
     0% {transform: translate(0px, 0px);}
 }
 
@@ -153,7 +176,9 @@ a{text-decoration: none;}
 .game__body:hover:before,
 .game__body:hover:after,
 .game__body:hover .game__items:before,
-.game__body:hover .game__items:after{
+.game__body:hover .game__items:after,
+.game__items:hover .game__dop:before,
+.game__items:hover .game__dop:after{
     display: none;
 }
 
